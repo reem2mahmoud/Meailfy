@@ -1,0 +1,150 @@
+@media screen and (max-width:1200px) {
+
+    /* NAVBAR */
+    nav .container .navbar_links {
+        display: none
+    }
+
+    nav .container .dark_mode .fa-bars {
+        display: inline-block;
+    }
+
+
+}
+
+@media screen and (max-width:992px) {
+
+    /*  MAIN */
+    .container {
+        width: 85%;
+    }
+
+    main .container {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-block: 100px 50px
+    }
+
+    main .container .home_content,
+    main .container .home_mealify_dish {
+        width: 80%
+    }
+
+    main .container .home_content .home_actions {
+        justify-content: center;
+    }
+
+    /* PROFISSIONAL__CHEFS */
+    #profissional__chefs .chefs {
+        justify-content: space-between;
+    }
+
+    #profissional__chefs .chefs .chef_card {
+        width: 45%;
+    }
+
+    /* GALLERY */
+
+
+    /* FOOTER */
+    footer .container {
+        justify-content: center;
+    }
+
+    footer .container .about,
+    footer .container .get_touch {
+        width: 47%;
+    }
+
+    footer .container .newsletter {
+        width: 90%;
+        order: 3
+    }
+
+    footer .container .about .logo img {
+        width: 10%;
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    .container {
+        width: 80%;
+    }
+
+    /* PROFISSIONAL__CHEFS */
+    #profissional__chefs .chefs {
+        justify-content: center;
+    }
+
+    #profissional__chefs .chefs .chef_card {
+        width: 80%;
+    }
+
+    /* CONTACT__US */
+    #contact__us .container .contact_details .form .user_details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact__us .container .contact_details .details .card,
+    #contact__us .container .contact_details .form input,
+    #contact__us .container .contact_details .form textarea {
+        width: 100%;
+    }
+
+    /* FOOTER */
+
+    footer .container .about,
+    footer .container .get_touch,
+    footer .container .newsletter {
+        width: 90%;
+    }
+
+    footer .container .get_touch {
+        order: 3
+    }
+}
+
+@media screen and (max-width:576px) {
+
+    /*  MAIN */
+    .container {
+        width: 95%;
+    }
+
+    main .container .home_content .home_actions {
+        flex-direction: column;
+
+    }
+
+    main .container .home_content .home_actions .book_table,
+    main .container .home_content .home_actions .watch_video {
+        margin-top: 20px
+    }
+
+    main .container .home_content h1 {
+        font-size: 50px;
+    }
+
+    /* PROFISSIONAL__CHEFS */
+    #profissional__chefs .chefs .chef_card {
+        width: 100%;
+    }
+
+    /* FOOTER */
+    footer .container .newsletter form {
+        flex-direction: column;
+
+
+    }
+
+    footer .container .newsletter form input,
+    footer .container .newsletter form button {
+        width: 100%;
+        padding-block: 17px;
+        margin-top: 10px
+    }
+}

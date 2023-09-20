@@ -1,0 +1,753 @@
+/* GENERAL */
+:root {
+    --main_color: #CE1313;
+    --hover_color: #E61414;
+    --background_color: #EEEEEE;
+    --main_font_color: #212529;
+    --seconday_font_color: #7f7f90;
+    --icon_color: #37373f66;
+    --social_background_color: #ffffff4d;
+    --contact_card_color: #F5F5F5;
+    --scrollbar_thumb_color: #000;
+    --main_font: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --secondary_font: 'Amatic SC', cursive;
+    --section_margin_bottom: 120px;
+    --section_padding: 70px;
+    --gallery_card_border: 4px;
+
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    font-family: var(--main_font);
+    color: var(--main_font_color);
+    text-transform: capitalize;
+    overflow: auto;
+}
+
+::selection {
+    color: var(--contact_card_color);
+    background-color: var(--main_color);
+
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: 0px 0px 21px 0px #0003 inset;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar_thumb_color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #eeeeee8c inset;
+    ;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffff
+}
+
+.dark-mode {
+    background-color: black !important;
+    color: white;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.active {
+
+    color: var(--main_font_color);
+}
+
+.mealify_logo {
+    font-size: 30px;
+    color: var(--main_font_color);
+    font-weight: 700;
+}
+
+.mealify_logo::after {
+    content: ".";
+    color: var(--main_color);
+}
+
+.mealify_btn {
+    background-color: var(--main_color);
+    color: #fff;
+    border: none;
+    padding: 13px 28px;
+    font-size: 15px;
+}
+
+.mealify_btn:hover {
+    background-color: var(--hover_color);
+}
+
+.mealify_title {
+    text-align: center;
+}
+
+.mealify_title p {
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+.mealify_title h2 {
+    font-family: var(--secondary_font);
+    font-size: 50px;
+    margin-bottom: 30px
+}
+
+.mealify_title h2 span {
+    color: var(--main_color)
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 0px 14px 0px #0000001b;
+    padding: 30px 0;
+    z-index: 999;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+nav .container .navbar_links,
+nav .container .dark_mode,
+nav .container .logo {
+    width: 33%;
+}
+
+nav .container .navbar_links ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav .container .navbar_links ul li a {
+    color: var(--seconday_font_color);
+    font-weight: 600;
+    position: relative
+}
+
+nav .container .navbar_links ul li a::after {
+    content: ' ';
+    width: 0px;
+    height: 2px;
+    background-color: var(--main_color);
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    transition: all 0.4s;
+}
+
+nav .container .navbar_links ul li a:hover::after {
+    width: 50px;
+}
+
+nav .container .dark_mode {
+    text-align: right;
+}
+
+nav .container .dark_mode .fa-bars {
+    display: none;
+}
+
+nav .container .dark_mode .fa-moon,
+nav .container .dark_mode .fa-bars {
+    font-size: 25px;
+    cursor: pointer;
+    margin-left: 10px
+}
+
+nav .container #vertical_menu {
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 300px;
+    top: 0;
+    background: transparent;
+    padding: 30px;
+    border-left: 1px solid #ccc;
+    display: none;
+}
+
+nav .container #vertical_menu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav .container #vertical_menu .fa-xmark {
+    right: 17px;
+    position: absolute;
+    top: 20px;
+}
+
+nav .container #vertical_menu ul li {
+    margin-top: 20px
+}
+
+nav .container #vertical_menu ul li a {
+    color: var(--seconday_font_color);
+}
+
+
+/* HOME */
+main {
+    background-color: var(--background_color);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--section_margin_bottom)
+}
+
+main .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 50px
+}
+
+main .container .home_content {
+    width: 50%
+}
+
+main .container .home_mealify_dish {
+    width: 40%
+}
+
+main .container .home_content h1 {
+    font-family: var(--secondary_font);
+    font-size: 65px;
+}
+
+main .container .home_content p {
+    margin: 30px 0 40px 0;
+}
+
+main .container .home_content .home_actions .book_table {
+    border-radius: 0 20px 20px 20px;
+}
+
+main .container .home_content .home_actions .watch_video {
+    margin: 0 30px;
+}
+
+main .container .home_content .home_actions .watch_video span {
+    color: var(--main_font_color);
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+main .container .home_content .home_actions,
+main .container .home_content .home_actions .watch_video {
+    display: flex;
+    align-items: center;
+}
+
+main .container .home_content .home_actions .watch_video:hover span {
+    color: var(--main_color)
+}
+
+main .container .home_content .home_actions .watch_video .left_border {
+    height: 58px;
+    width: 29px;
+    border-bottom-left-radius: 58px;
+    border-top-left-radius: 58px;
+    background: var(--main_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+main .container .home_content .home_actions .watch_video .left_border span {
+    display: inline-block;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 26px;
+}
+
+main .container .home_content .home_actions .watch_video i {
+    margin: 11px 16px;
+}
+
+main .container .home_mealify_dish img {
+    width: 100%;
+    /*drop-shadow(offset-x offset-y blur-radius color)*/
+    filter: drop-shadow(4px 4px 9px #000a);
+    transition: all 0.5;
+}
+
+main .container .home_mealify_dish img:hover {
+    animation: shake 1s infinite;
+
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/* PROFISSIONAL__CHEFS */
+#profissional__chefs {
+    margin-bottom: var(--section_margin_bottom)
+}
+
+#profissional__chefs .chefs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+#profissional__chefs .chefs .chef_card {
+    width: 30.5%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 20px
+}
+
+#profissional__chefs .chefs .chef_card img {
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+#profissional__chefs .chefs .chef_card .card_img {
+    position: relative
+}
+
+#profissional__chefs .chefs .chef_card .card_img::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/team-shape.svg");
+    background-repeat: repeat;
+    width: 100%;
+    height: 50px;
+    bottom: -1px;
+    left: 0
+}
+
+
+
+#profissional__chefs .chefs .chef_card .card_content {
+    margin: 20px 0;
+    padding: 5px 18px;
+
+}
+
+#profissional__chefs .chefs .chef_card .card_content p {
+    margin: 10px 0;
+    color: var(--seconday_font_color);
+    font-size: 15px
+}
+
+#profissional__chefs .chefs .chef_card .card_content p:nth-of-type(2) {
+    font-style: italic;
+}
+
+#profissional__chefs .chefs .chef_card .card_socail {
+    width: 50px;
+    height: 160px;
+    background-color: var(--social_background_color);
+    position: absolute;
+    right: -49px;
+    top: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+#profissional__chefs .chefs .chef_card .card_socail ul li {
+    margin: 18px 0
+}
+
+#profissional__chefs .chefs .chef_card .card_socail ul li i {
+    font-size: 19px;
+    color: var(--icon_color);
+    transform: all 0.5s;
+}
+
+#profissional__chefs .chefs .chef_card .card_socail ul li i:hover {
+    color: var(--main_font_color);
+}
+
+#profissional__chefs .chefs .chef_card:hover .card_socail {
+    right: 10px;
+    opacity: 1;
+}
+
+/* GALLERY */
+#mealify_gallery {
+    background-color: var(--background_color);
+    padding: var(--section_padding) 0;
+    margin-bottom: var(--section_margin_bottom)
+}
+
+#mealify_gallery .container .gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px
+}
+
+#mealify_gallery .container .gallery .gallery_cards {
+    /* width: 32%; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#mealify_gallery .container .gallery .gallery_cards picture {
+    width: 100%;
+    position: relative;
+}
+
+#mealify_gallery .container .gallery .gallery_cards picture img {
+    width: 100%;
+    border: 5px solid #FFFFFF;
+}
+
+#mealify_gallery .container .gallery .gallery_cards picture .img_overlay {
+    position: absolute;
+    bottom: var(--gallery_card_border);
+    right: var(--gallery_card_border);
+    left: var(--gallery_card_border);
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+
+}
+
+#mealify_gallery .container .gallery .gallery_cards picture .img_overlay h3 {
+    font-size: 26px
+}
+
+#mealify_gallery .container .gallery .gallery_cards picture:hover .img_overlay {
+    height: calc(100% - var(--gallery_card_border)*2);
+}
+
+/* CONTACT__US */
+#contact__us {
+    margin-bottom: var(--section_margin_bottom)
+}
+
+#contact__us .container .contact_details .contact_map {
+    margin-bottom: 30px;
+}
+
+#contact__us .container .contact_details .details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+#contact__us .container .contact_details .details .card {
+    display: flex;
+    width: 49.4%;
+    background-color: var(--contact_card_color);
+    padding: 25px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#contact__us .container .contact_details .details .card .card_icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--main_color);
+    margin-right: 10px;
+}
+
+#contact__us .container .contact_details .details .card .card_icon i {
+    color: #ffffff;
+    font-size: 18px;
+
+}
+
+#contact__us .container .contact_details .details .card .card_details p:nth-of-type(1) {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--seconday_font_color);
+    margin-bottom: 5px;
+
+}
+
+#contact__us .container .contact_details .details .card .card_details .opening_days {
+    font-weight: 800;
+}
+
+#contact__us .container .contact_details .form {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px
+}
+
+#contact__us .container .contact_details .form .user_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact__us .container .contact_details .form input,
+#contact__us .container .contact_details .form textarea {
+    width: 49%;
+    padding: 18px;
+    border: 2px solid #e5dfdf;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+#contact__us .container .contact_details .form textarea {
+    resize: none
+}
+
+#contact__us .container .contact_details .form input:focus,
+#contact__us .container .contact_details .form textarea:focus {
+    border: 2px solid var(--main_color)
+}
+
+#contact__us .container .contact_details .form input[name="subject"],
+#contact__us .container .contact_details .form textarea {
+    width: 100%;
+}
+
+#contact__us .container .contact_details .form .send_msg {
+    border-radius: 25px;
+    display: block;
+    margin-inline: auto;
+    margin-top: 30px;
+    text-transform: capitalize;
+    padding: 15px 35px;
+}
+
+/* FOOTER */
+footer {
+    height: fit-content;
+    color: #ffffff;
+    /* i copied linear-gradient from inspect */
+    background-image: linear-gradient(#0009, #0009),
+        url("../images/textured-metal-background.jpg");
+    background-size: contain;
+    padding-top: 50px;
+    position: relative;
+
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+footer .container .about,
+footer .container .get_touch {
+    width: 22%;
+    margin-bottom: 30px
+}
+
+footer .container .about .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px
+}
+
+footer .container .about .logo .mealify_logo {
+    color: #FFFF
+}
+
+footer .container .about .logo img {
+    width: 17%;
+    margin-right: 10px;
+}
+
+footer .container .about p {
+    margin-bottom: 15px;
+    text-transform: none;
+}
+
+footer .container .about .social {
+    text-align: center;
+}
+
+footer .container .about .social hr {
+    background-color: var(--icon_color);
+    margin-block: 10px
+}
+
+footer .container .about .social ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .container .about .social ul i {
+    font-size: 25px
+}
+
+footer .container .newsletter {
+    width: 50%;
+    margin-bottom: 30px
+}
+
+footer .container .newsletter p {
+    margin-block: 15px;
+}
+
+footer .container .newsletter form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+footer .container .newsletter form input {
+    width: 77%;
+    padding-inline: 20px
+}
+
+footer .container .newsletter form button {
+    padding-inline: 0;
+    width: 22%;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+footer .container .newsletter form button i {
+    margin-right: 5px
+}
+
+footer .container .newsletter .quick_links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+footer .container .newsletter .quick_links ul li {
+    width: 49%;
+    margin-top: 10px;
+    padding-block: 5px;
+    transition: all 0.5s
+}
+
+footer .container .newsletter .quick_links ul li i {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+footer .container .newsletter .quick_links ul li:hover {
+    background-color: var(--social_background_color);
+    transform: translateX(10px);
+}
+
+/* not-working */
+/* footer .container .newsletter .quick_links ul li::before {
+    content: "\f105"; 
+
+} */
+
+footer .container .get_touch ul {
+    margin-block: 15px
+}
+
+footer .container .get_touch ul li {
+    margin-block: 15px;
+    display: flex;
+    align-items: center;
+}
+
+footer .container .get_touch ul li i {
+    font-size: 22px;
+    color: var(--main_color);
+    margin-right: 15px
+}
